@@ -18,9 +18,35 @@
     
     <br><br>
     <h1>Whatshafız ‘Hafızkal’ Topluluk Kuralları</h1>     
+
+
+    <!--api başlangıç-->
+    <ul id="listele"></ul>
+    <script>
+        let data=fetch("https://api.whatshafiz.com/api/v1/regulations/hafizkal")
     
+        .then(response=>response.json())
+        .then(veri=>
+            veri.text(              
+                    listele.innerHTML+="<li>"+veri.text+"</li>",
+                    console.log(veri.name)
+                
+                
+            )
+
+        )
     
-    <ul style="text-align:left ; list-style-type:none">
+    </script>
+
+
+
+
+        <!--api bitiş-->
+
+
+
+    
+   <!-- <ul style="text-align:left ; list-style-type:none">
     <li>
         <h5>1. Whatshafız Hafızkal'ın Tanımı:</h5> 
         <li><p>Ezberleme açısından daha sağlam ve daha az vakit alan yeni hafızlık sistemidir.</p></li>
@@ -83,7 +109,7 @@
           
 
     </li>
-</ul>
+</ul>-->
 
   </div>
   

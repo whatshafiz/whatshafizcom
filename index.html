@@ -18,6 +18,7 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/css/variables.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
   <body>
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
@@ -50,7 +51,7 @@
               <a class="nav-link scrollto" href="index.html#ezber">Ezberleme Teknikleri</a>
             </li>
             <li>
-              <a class="nav-link scrollto" href="">Giriş Yap</a>
+              <a class="nav-link scrollto" href="https://panel.whatshafiz.com/login">Giriş Yap</a>
             </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle d-none"></i>
@@ -96,7 +97,7 @@
     <section id="featured-services" class="featured-services">
       <div class="container" id="yonetmelik">
         <div class="row gy-4" id="yonetmelik">
-          <div class="col-xl-6 col-md-8 d-flex" data-aos="zoom-out" data-aos-delay="50">
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="50">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-bounding-box-circles icon"></i>
@@ -107,7 +108,7 @@
               <p>Sıfırdan Başlayanların "Hafızol" programımızın kurallarını içeren Yönetmeliği Okumak İçin Tıklayınız</p>
             </div>
           </div>
-          <div class="col-xl-6 col-md-8 d-flex" data-aos="zoom-out" data-aos-delay="100">
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-calendar4-week icon"></i>
@@ -116,6 +117,39 @@
                 <a href="hafizkal.html" target="_blank" class="stretched-link">Hafız kal programı yönetmeliği</a>
               </h4>
               <p>Hafızlıklarını tekrar etmek isteyenler için "Hafızkal" programı kurallarını içeren Yönetmeliği okumak için tıklayınız.</p>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week icon"></i>
+              </div>
+              <h4>
+                <a href="" target="_blank" class="stretched-link">Kayıt olunabilecek kurslar</a>
+                <!--kurslar başlangıç-->
+                <ul id="listele"></ul>
+    <script>
+        let data=fetch("https://api.whatshafiz.com/api/v1/courses/available")
+    
+        .then(response=>response.json())
+        .then(veri=>{
+            veri.forEach(element => {
+                var date = new Date(element.can_be_applied_until);
+                
+                if(date.getTime() > Date.now())
+                {
+                    listele.innerHTML+=`<li>${element.type}-son kayıt tarihi -${element.can_be_applied_until}</li>`
+                    
+                }
+                
+            });
+
+        })
+    
+    </script>
+                <!--kurslar bitiş-->
+              </h4>
+              <p></p>
             </div>
           </div>
         </div>
@@ -167,7 +201,7 @@
                 </li>
               </ul>
               <div class="text-center mt-auto">
-                <a href="#" class="buy-btn">Kayıt Ol</a>
+                <a href="https://panel.whatshafiz.com/register?type=hafizkal" class="buy-btn">Kayıt Ol</a>
               </div>
             </div>
           </div>
@@ -206,7 +240,7 @@
                 </li>
               </ul>
               <div class="text-center mt-auto">
-                <a href="#" class="buy-btn">Kayıt Ol</a>
+                <a href="https://panel.whatshafiz.com/register?type=hafizol" class="buy-btn">Kayıt Ol</a>
               </div>
             </div>
           </div>
@@ -366,7 +400,7 @@
               <div class="col-xl-6 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="50">
                 <div class="team-member">
                   <div class="member-img">
-                    <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                    <img src="assets/img/team/team-1.jpg" style="width: 295px; height:221px;" class="img-fluid" alt="">
                   </div>
                   <div class="member-info">
                     <h4>Öğr.Gör.Dr.Muhammet Ali Can</h4>

@@ -35,9 +35,32 @@
     
     <br><br>
     <h1>Whatshafız Topluluk Kuralları</h1>     
+
+    <!--api başlangıç-->
+    <ul id="listele"></ul>
+    <script>
+        let data=fetch("https://api.whatshafiz.com/api/v1/regulations/hafizol")
+    
+        .then(response=>response.json())
+        .then(veri=>
+            veri.text(              
+                    listele.innerHTML+="<li>"+veri.text+"</li>",
+                    console.log(veri.name)
+                
+                
+            )
+
+        )
+    
+    </script>
+
+
+
+
+        <!--api bitiş-->
     
     
-    <ul style="text-align:left ; list-style-type:none">
+   <!-- <ul style="text-align:left ; list-style-type:none">
     <li>
         <h5>1. Whatshafız'ın Tanımı ve Amacı:</h5> 
         <li><p>Ezberleme açısından daha sağlam ve daha az vakit alan yeni hafızlık sistemidir. Öğrencinin hafızlığı tamamlanmasının ardından ömrün sonuna kadar ezberini koruması amaçlanmaktadır.</p></li>
@@ -116,7 +139,7 @@
         
           <li>9.14. Bir kural grup içerisinde uygulanmıyor ve başkan ile denetmenler buna sessiz kalıyorsa, üyeler istek-şikayet formuna bu durumu şikayet olarak bildirirler. Bir kural grup içerisinde uzun süreli uygulanmamış ve hiçkimse istek-şikayet formuna bunu şikayet etmez ise, bu durumda grup tamamen fesh edilir ve üyelerin tamamı gruptan çıkarılıp başka bir gruba da eklenmezler.</li>
         </li>
-</ul>
+</ul>-->
 
   </div>
                                                       
