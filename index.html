@@ -64,8 +64,6 @@
         <h2>Whats <span>Hafız</span>
         </h2>
         <p>Hafızlık Eğitim Programı</p>
-        <!-- <div class="row gy-4"><div class="col-xl-12 col-md-12 d-flex" data-aos="zoom-out"><div class="service-item position-relative"><div class="icon"><i class="bi bi-activity icon"></i></div><h4>Duyuru</h4><p>25.09.2022 pazar günü Hafızlık tanıtım ve işleyişle ilgili YouTube canlı yayını yapılacaktır. Herkesin katılımı önemlidir.
-              </p></div></div></div> -->
       </div>
     </section>
     <section id="whafiznedir" class="cta">
@@ -128,9 +126,9 @@
                 <a href="" target="_blank" class="stretched-link">Kayıt olunabilecek kurslar</a>
                 <!--kurslar başlangıç-->
                 <ul id="listele"></ul>
+                
     <script>
-        let data=fetch("https://api.whatshafiz.com/api/v1/courses/available")
-    
+        fetch("https://api.whatshafiz.com/api/v1/courses/available")
         .then(response=>response.json())
         .then(veri=>{
             veri.forEach(element => {
@@ -138,7 +136,7 @@
                 
                 if(date.getTime() > Date.now())
                 {
-                    listele.innerHTML+=`<li>${element.type}-son kayıt tarihi -${element.can_be_applied_until}</li>`
+                    listele.innerHTML+=`<div>${element.type}-son kayıt tarihi -${element.can_be_applied_until}</div>`
                     
                 }
                 
@@ -200,8 +198,8 @@
                   <span>Kayıt Formu için butona tıklayınız.</span>
                 </li>
               </ul>
-              <div class="text-center mt-auto">
-                <a href="https://panel.whatshafiz.com/register?type=hafizkal" class="buy-btn">Kayıt Ol</a>
+              <div  class="text-center mt-auto">
+                <a id="btnHafizKal" href="https://panel.whatshafiz.com/register?type=hafizkal" class="btn btn-primary buy-btn disabled">Kayıt Ol</a>
               </div>
             </div>
           </div>
@@ -239,8 +237,8 @@
                   <span>Kayıt Formu için butona tıklayınız. </span>
                 </li>
               </ul>
-              <div class="text-center mt-auto">
-                <a href="https://panel.whatshafiz.com/register?type=hafizol" class="buy-btn">Kayıt Ol</a>
+              <div  class="text-center mt-auto">
+                <a id="btnHafizOl" href="https://panel.whatshafiz.com/register?type=hafizol" class="btn btn-primary buy-btn disabled">Kayıt Ol</a>
               </div>
             </div>
           </div>

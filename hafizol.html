@@ -1,149 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Whatshafız</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<style>
+  <head>
+    <title>Whatshafız</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <style>
     table {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: grey;
-}
-.c18 {
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin-right: auto;
-}
-</style>
-
-
-<body>
-
-<div class="container">
-  <div class="jumbotron text-center">
-    <img class=".img-fluid. max-width: 100%;height: auto;" style="width:350px ; height:227.98px ;" src="https://res.cloudinary.com/defhonsuw/image/upload/v1668430497/whafiz/whafizlogo_uxf5xf.png" >
-    
-    
-    <br><br>
-    <h1>Whatshafız Topluluk Kuralları</h1>     
-
-    <!--api başlangıç-->
-    <ul id="listele"></ul>
-    <script>
-        let data=fetch("https://api.whatshafiz.com/api/v1/regulations/hafizol")
-    
-        .then(response=>response.json())
-        .then(veri=>
-            veri.text(              
-                    listele.innerHTML+="<li>"+veri.text+"</li>",
-                    console.log(veri.name)
-                
-                
-            )
-
-        )
-    
-    </script>
-
-
-
-
-        <!--api bitiş-->
-    
-    
-   <!-- <ul style="text-align:left ; list-style-type:none">
-    <li>
-        <h5>1. Whatshafız'ın Tanımı ve Amacı:</h5> 
-        <li><p>Ezberleme açısından daha sağlam ve daha az vakit alan yeni hafızlık sistemidir. Öğrencinin hafızlığı tamamlanmasının ardından ömrün sonuna kadar ezberini koruması amaçlanmaktadır.</p></li>
-
-        <h5>2. Whatshafız'a Üyelik:</h5> 
-        <li><p>Whatshafıza öğrenci olarak girebilmek için Kur'an-ı Kerim mahreçlerini düzgün okuyabilme seviyesi ile seri okuma seviyesi istenir. Mezuniyeti ve yaşı önemli değildir.</p></li>
-
-        <h5>3. Öğrencilerin Gruba Kabul Edilişi:</h5>
-        <ul>
-            <li>3.1 Hafızkal öğrenciler, hafızol öğrencilerinin mülakatını yapıp öğrencinin okuyuşunu ya da mahrecini uygun bulurlarsa, onu kabul ederler. Uygun değil ise, gruptan çıkarırlar. Hafızkal öğrencileri, öğrencinin hafızlık için uygun olup olmadığını kontrol ederken Kur’an’ı yüzünden okuma ile mahrecini dikkate alacaktır.</li>
-       
-            <li>3.2 Eğer hafızkal öğrencisi, hafızol öğrencisinin mahrecini uygun bulmaz ise, öğrenci başka bir hocaya mahrecini dinletemeyecektir. Gruptan ayrılacaktır. Herhangi bir Kur’an kursundan mahreçlerini düzeltip bir sonraki dönemde tekrar bize kayıt yaptırabilecektir.</li>
-        </ul>
-
-        <h5>4. Yeni Hafızlık Yapanların Program İşleyişi (Hafızol Programı)</h5>
-        <ul>
-          <li>4.1 Hafızkal öğrencileri, hafızol öğrencisini dinlerken öğrenciye sayfa başı en fazla 2 dakika süre tanıyacaktır. Öğrenci hocayı bir sayfa ezber vermek için, 2 dakikadan daha fazla oyalayamaz. Bu durumda öğrenci küme düşer.</li>
-          <li>4.2. Öğrenci hocaya ezber verirken, bir sayfada en fazla 3 hata yapabilir. Hatalar üç çeşittir: 1. Takılma hatası, 2. Hareke hatası, 3. Kelime hatası. Bir sayfada bu hatalardan birer tane olmak kaydıyla en fazla 3 hata yapabilir. Eğer aynı türden iki tane hata yaparsa, (örneğin 2 kez takıldysa, ya da iki kez hareke hatası yaptıysa), o sayfayı  hocaya en fazla bir defa daha verebilir. İkincisinde de düzgün veremeydiyse, küme düşer.</li>
-          <li>4.3 Öğrenci, öğrenciye tekrar sayfalarını ezber verirken, yine aynı şekilde 4.2. maddesindeki sayfa başı 3 hata yapma hakkını tanıyacaktır. Tekrar sayfalarını veren öğrenci başarısız olursa, onu dinleyen diğer öğrenci, onun hocasını etiketleyerek durumu bildirecek.</li>
-          <li>4.4. Öğrenci hocaya sadece yeni sayfa ezberini verir. Tekrar sayfalarını ise kendisi ile eşleştirilen kişiye verir.</li>
-          <li>4.5. Her öğrenci, ezber vereceği yeni sayfanın meal sorusunu cevaplandırmakla mükelleftir (Diyanet’in mealini tavsiye ediyoruz). Meal sorusunu hatalı cevaplandıranlar küme düşer.</li>
-          <li>4.6. Bir üye bir ayda, yeni ezber vereceği sayfayı 4 kez vermediğinde, gruplardan tamamen çıkarılır. Bir ay tamamlandığında, daha önceki ayda hiç verememiş (hatalı ya da eksik vermiş değil, hiç ezber vermemiş) olduğu sayfaların sayısı sıfırlanacaktır. Örneğin Şubat ayında öğrenci 3 kez hiç ezber vermediyse, gruptan çıkarılmaz. Ancak dördüncü kez hiç ezber vermez ise, o zaman gruptan çıkarılır. Şubat ayında 3 kez vermediyse ve Mart ayına girilirse, Şubat'taki veremediği sayfa sayıları sıfırlanır, Mart ayında yeniden saymaya başlanır.</li>
-          <li>4.7. Hafızol Programındaki (sıfırdan hafızlık) Öğrenciler İçin Cüz Geçme Sınavı: Her cüz tamamlandıktan 7 sayfa sonra, o cüzün geçme sınavı yapılacaktır. Cüz geçme sınavı şu şekilde uygulanacaktır. Örneğin birinci cüzü (1-20’nci sayfalar) bitiren kişi, 27’nci sayfaya geldiğinde birinci cüzün sayfalarını (1-20’yi) sınav olarak verecektir. Cüz geçme sınavını, farklı gruptaki bir başkan yapacaktır. Öğrenci cüzü tamlamadıktan sonra 7 sayfa geçtiğinde, grup başkanı denetmenden öğrenciyi sınav yapması için bir hoca isteyecektir. Denetmen de kendine ait diğer gruplardan birinin başkanını sınav yapmak üzere görevlendirecektir. Hangi başkanın hangi öğrenciye sınav yapacağını denetmenler belirleyecektir. Cüzü geçmek için sayfadaki hata yapma kuralları yine aynen geçerli olacaktır. Yani her sayfada toplamda üç farklı hatadan fazla hata yapanlar, cüzü geçemeyecekler ve o cüzün başına tekrar dönecektir. Örneğin öğrenci üçüncü cüzü (sayfa 41-60) vereceğinde, 7 sayfa sonra olan 67’nci sayfaya geçeceğinde, üçüncü cüzü (sayfa 41-60) bitirme sınavına girer. Bu sınavı geçince 67’inci sayfadan devam eder. Ancak üçüncü cüz sınavını geçemezse, üçüncü cüzün başı olan 41’inci sayfaya geri döner. Cüz geçme sınavı yapılırken, her sayfadan rast gele 5 satır okutulacaktır (sayfa başından 5 satır, ya da sayfa ortasından 5 satır, ya da sayfa sonunda 5 satır fark etmez). Öğrenci cüz geçme sınavından başarısız olduğunda, kendisi o cüzün en başına döner. Cüz geçme sınavından geçemeyen öğrenci ile ilgili cüzlerde eşleşmiş olan kişi de 5 gün geri düşer (çünkü iyi verilmemiş sayfalar için iyiymiş gibi rapor vermesi hatalıdır).</li>
-          <li>4.8  Hafızkal Programındaki (hafızlık tekrarı) Öğrenciler İçin Cüz Geçme Sınavı hafızol’daki gibi yapılacaktır. Sadece her cüz tamamlanıp 7 gün sonra sınav olmak yerine, her üç cüz tamamlandığında 7 gün sonra üç cüzün sınavına girecektir.</li>
-          <li>4.9. Bir öğrenci, tekrar sayfalarını düzgün veremediyse, eşleştiği kişi, onun hocasına bu durumu bildirir. Eğer öğrencinin tekrar sayfalarının ezberi bozuk olmasına rağmen ezberinin kötü olduğunu bildirmediyse, bu durumda her iki taraf da küme düşer.</li>
-          <li>4.10. Pazar günü tatildir. Ezber yapma zorunluluğu yoktur. Ancak öğrenci ile hoca kendi aralarında anlaşmış ise, devam edebilirler. Bu durumda kurallar da aynen uygulanacaktır.</li>
-          <li>4.11. Yeni sayfa ezberleri verilirken, bir sonraki sayfanın ilk satırı da birlikte verilecektir. Aksi takdirde kopmalar yaşanmaktadır.</li>
-
-          <li>4.12. Ezber ve tekrar sayfaları düzgün bir şekilde verildikten sonra gruba “falanca kişi ezberini sağlam bir şekilde verdi/vermedi/ulaşılamadı” diye gruba mesaj atılır. Ezber sağlam verilmediyse, öğrenciden küme düşülür. Eşleşen kişi, eşleştiği kişi hakkında durum mesajı atmak zorundadır. Arkadaşı hakkında hiçbir bildirimde bulunmadıysa, ceza alır (küme düşer). Yalan ifade eden bir beyanda bulunduysa (mesela öğrenci sayfa düzgün vermemesine rağmen düzgün vermiş gibi mesaj attıysa) ve denetmen bunu fark ederse, yalan beyanda bulunan kişi banlanır ve sistemden tamamen çıkarılır. Hiçbir şekilde hiçbir eğitimimize tekrar katılamaz. (Bu nedenle eşleştiğiniz kişinin ezberi düzgün değilse, lütfen iyiymiş gibi rapor yazmayınız. Denetim yok sanıp rahat davarnılıyor, birkaç ay sonra denetime takılınca tartışmalar çıkıyor.)</li>
-
-        </ul>
-        <h5>5.Küme Düşme</h5>
-        <li>5.1. Öğrenci sayfa ezberini ya da tekrar sayfalarının ezberini kurallara uygun bir şekilde veremediyse, küme düşer. Bu durumda bir önceki sayfaya ve onların tekrar sayfalarına geri döner (örneğin 57. sayfayı veremediyse, 56. sayfaya geri gider ve 56. sayfa ile tekrar etmesi gereken ilgili sayfaları verir. Klasik sistemde olduğu gibi 57’yi veremediyse, ertesi gün yine 57’yi veremez. Bir alt sayfaya küme düşer.)</li>
-        <h5>6.Ezber Verme Vakti</h5>
-        <li>6.1. Ezber verme saatleri 18.00-19:00 arasıdır. Bu saatler arasında ezberler ve tekrarlar verilir. Hoca-öğrenci ile öğrenci-öğrenci arasında farklı bir saat konusunda anlaşma yapılabilir. Ancak ikisinin de vakit konusunda uyuşamaması durumunda 18:00-19:00 esas olacaktır. Ezber verme saati anlaşması en azından bir gün öncesinden yapılaması gerekir. (Aynı gün içerisinde “ben şu an müsaitim, şimdi aradınız aradınız, aramadıysanız kümenizi düşürüyorum.” denemez.).. 20:00’dan sonraki güne de tayin edilemez. Yani salı günü 20:00’dan başlayıp çarşamba
-
-            20:00’a kadar verilmesi gereken bir ezber sayfası, bu saatler arasında olmak zorundadır. Çarşamba günü 21:00’da verilemez. O zaman ertesi günün ödev süresine geçilmiş olur.</li>
-        <h5>7. Başkanlık</h5>
-        <li>7.1.Gruplarda bulunan herkes, dönüşümlü olarak 1’er ay başkanlık yapacaktır. Başkan olduğu sürede görevleri şu şekildedir:</li>
-        <li>a)Başkanlar, öğrencileri ikişerli eşleştirir (haftalık olarak eşleştirme değiştirilmeyecek, sabit kalacak). Grup tek haneli ise sonda kalan tek kişiyi denetmene söyler. Denetmen de onu başka bir tek haneli gruba ekler.</li>
-        <li>b)Grup içerisindeki öğrenci ve hocaları denetler. Kurallara uymayan birisine rastlar ise, onu küme düşürür.</li>
-        
-        <li>c)Grup durum çizelgesini doldurup fotoğrafını gruba gönderir (kim ezber verdi/veremedi/küme düştü vs.)</li>
-        <h5>8. Denetmenlik</h5>
-        <li>8.1Kişilere dönüşümlü başkanlık yerine denetmenlik görevi de verilebilir. Denetmenlik yapanlar, başkanlık yapmış sayılırlar.</li>
-          <li>8.2.Denetmenlerin aylık ceza hakları 3 yerine 6’dır. Yani bir ay içinde 6 defa hiç ezber vermeme (hatalı değil, hiç vermeme) sınırı vardır. Bir ayda yedinci kez hiç ezber vermez ise, o durumda gruplardan tamamen çıkarılır.</li>
-          <li>8.3.Denetmenler, sayfa ezberi verememeleri durumunda, küme düşmezler. Hangi sayfada kaldılarsa, o sayfadan devam ederler.</li>
-          <li>8.4 Denetmenin bir grubundaki toplam hoca/öğrenci sayısı 10’un altına düşerse, o zaman kendi bünyesindeki başka bir grup ile birleştirme yapar.</li>
-          <li>8.5.Denetmenler istedikleri zamanlarda öğrencinin tekrar sayfalarını dinleme hakkına sahiptir. Eğer öğrencinin tekrar sayfaları bozuk olmasına rağmen, eşi tarafından herhangi bir "bozuk ezber" bildirimi gelmemiş ise, o zaman hem öğrenci küme düşer, hem de eşleştiği kişi küme düşer.</li>
-          <li>8.6 Denetmenler grup başkanlarının ve üyelerin eksikliklerini denetler. Herhangi bir aksama gördüklerinde ilgili kişilere ceza vermeyen başkana ceza verirler.</li>
-          <li>8.7.Denetmenlere 10 tane grup verilir. Bu grupların sayısı azaldığında, yeni başlayan kurlardan kendisine gruplar verilir.</li>
-
-          <h5>9. Genel</h5>
-          <li>9.1. Dr. Muhammet Ali Can’ın eğitim faaliyetleri içerisindeki genel edep kuralları burada da geçerlidir. Buna göre konuşmalarda saygılı olma zorunluluğu vardır. Aşağılayıcı ifadeler, emir kipi ve buna benzer rahatsız edici cümlelerin kullanılması durumunda, öğrenci gruplardan çıkarılır ve banlanır. Bundan sonra bizim hiçbir faaliyetimize katılamaz.</li>
-          <li>9.2. Kurulan öğrenci-hoca grupları başka bir platforma taşınmaması gerekir. Bir üye kurallara uymaması sonucu gruplardan çıkarılması durumunda hoca tarafından farklı bir platformda devam etmeyecektir. Bu şekilde yapılması durumunda hakkımız helal değildir.</li>
-          <li>9.3. 0551 012 17 30 numaralı whatshafız hizmet telefon numarası, üyelerin telefonunda kayıtlı olması zorunludur. Bazı duyurular bu telefonun whatsapp durumundan yapılmaktadır. Eğer kayıtlı olmaz ise, durumlarımız görünemez. Ayrıca üyelerin de durumu bizim tarafımızdan görülemez hale gelir. O nedenle iki tarafta kayıtlı olması gerekmektedir.</li>
-          <li>9.4. Üyeler, Dr. Muhammet Ali Can’ın ücretsiz eğitim faaliyetleri ile ilgili afişi (arapça, ingilizce, hafızlık vs.) ayda en fazla bir kez whatsapp’tan durum olarak tam gün şeklinde belirtilen saatler arasında duyurması gerekir. (Üyelerden ayda bir defadan daha fazla duyuru yapılması istenmeyecektir)</li>
-          <li>9.5. Bu yönetmelikte yazanlar ile grup başkanının/denetmenlerin/Muhammet Ali Can'ın söylediği çeliştiğinde, yönetmelik esas alınacaktır. O nedenle yönetmeliği lütfen düzgün okuyunuz. Daha sonra “falanca kişi şöyle söylemişti, ben de yönetmeliği uygulamadım, onun dediğini  yaptım.” demeyiniz.</li>
-          <li>9.6. Hafız öğrenciler ile hocalar, kurallarımızı uygulamamızlık etmeyecekler ya da kendilerince farklı metotları gruplarımızda uygulamayacaklardır (örneğin klasik cüz mantığı sistemi vs.).</li>
-          <li>9.7. Bayanların mazeret günleri ile igili farklı bir uygulamamız yoktur. Mazeret günlerinde ezber vermeye devam edilecektir.</li>
-          <li>9.8. Ezberler hem hocaya, hem de öğrenciye verilirken kamera açık ve gözü kapalı olarak verilecektir. Eğer karşıdaki hoca ya da öğrenci ezber dinlerken kişinin kulaklık kullanmasından şüpheleniyorsa, bir kaç ayet öncesinden tekrar okumaya başlamasını talep edebilir.</li>
-          
-          
-          <li style="text-align:center">
-            <img src="../HeroBiz/assets/img/tablo.PNG">
-          </li>
-          <li>9.9. Bu sistem, öğrencilere göre hazırlanmıştır. Ev hanımları, polis memuru ya da sağlıkçı tarzı vakti olmayan insanlara göre hazırlanmamıştır. Vakit olarak öğrenci gibi müsait olanlar, bu sistemde devam edebilirler. Ancak sistemdeki öğrenciler, vakti fazla olmayanlara göre kendilerini ayarlamayacaklardır.</li>
-
-          <li>9.10. Yönetimi, denetmenleri, başkanları özelden aramak, mesaj atmak yasaktır. Grup içerisinden etiketleyerek soru sorulabilir ya da yönetim ile ilgili şikayet varsa, istek-şikayet formuna yazı yazılabilir (grup açıklamasında linki var). Eğer özelden yazan ya da mesaj atan olursa, yönetici o kişiyi gruptan tamamen çıkarma hakkına sahiptir (lütfen "şu kadar gündür ezber yapıyorum, dolayısıyla ben çıkarılamam" demeyiniz. Yöneticiler kendi vakitlerinden çok ödün vererek bu sistemi yürütüyorlar.) Bazı öğrenciler “benim şöyle şöyle özel bir durumum var, bana kimse cevap vermedi, o yüzden özelden arama/mesaj atma hakkına sahibim” diyor. Böyle bir hak bulunmamaktadır. Özelden yazma kaçınılmaz ise, lütfen bu gruplardan çıkıp en yakın müftülüğe hafızlık için başvuruda bulununuz. Biz özel olarak ilgilenemiyoruz.</li>
-    
-          <li>9.11. “Hafız ol” programımız, sıfırdan hafızlık yapanlar içindir. Günde bir sayfa ezber verilerek ilerlenir. Kişiden kişiye değişmekle birlikte günlük ortalama 3 saat çalışmak gerekir. Program toplamda 2 yıl sürer.</li>
-    
-          <li>9.12. “Hafız kal” programımız, daha önce hafızlık yapıp, tekrar sağlama almak isteyenler içindir. Günde 3 sayfa verilerek ilerlenir. Kişiden kişiye değişmekle birlikte günlük ortalama 5 saat çalışmak gerekir. Program toplamda 8 ay sürer.</li>
-        
-          <li>9.13. Öğrenci ezberini hocaya/eşleştiği kişiye verirken, karşıdakinin genel olarak düzgünce kendisini dinlemediğini fark ederse, bu durumda ezberini alan kişiyi şu şekilde test eder: Sayfa ezberini verirken, bir ayet atlayarak okur. Ezberi dinleyen kişi bunu fark etmiyorsa, bu durumda denetmene şikayet eder. Denetmen de öğrencinin grubunu değiştirir ve ezberi kötü dinleyen kişiyi 5 gün önceki sayfaya küme düşürür.</li>
-        
-          <li>9.14. Bir kural grup içerisinde uygulanmıyor ve başkan ile denetmenler buna sessiz kalıyorsa, üyeler istek-şikayet formuna bu durumu şikayet olarak bildirirler. Bir kural grup içerisinde uzun süreli uygulanmamış ve hiçkimse istek-şikayet formuna bunu şikayet etmez ise, bu durumda grup tamamen fesh edilir ve üyelerin tamamı gruptan çıkarılıp başka bir gruba da eklenmezler.</li>
-        </li>
-</ul>-->
-
-  </div>
-                                                      
-</div>
-
-</body>
+      display: table;
+      border-collapse: separate;
+      box-sizing: border-box;
+      text-indent: initial;
+      border-spacing: 2px;
+      border-color: grey;
+    }
+    .c18 {
+      border-spacing: 0;
+      border-collapse: collapse;
+      margin-right: auto;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center">
+        <img
+          class=".img-fluid. max-width: 100%;height: auto;"
+          style="width: 350px; height: 227.98px"
+          src="https://res.cloudinary.com/defhonsuw/image/upload/v1668430497/whafiz/whafizlogo_uxf5xf.png"
+        />
+        <br /><br />
+        <h1>Whatshafız Topluluk Kuralları</h1>
+        <div id="listele"></div>
+        <script>
+          fetch("https://api.whatshafiz.com/api/v1/regulations/hafizol")
+            .then((response) => response.json())
+            .then((veri) =>
+              veri.text((listele.innerHTML += "<div>" + veri.text + "</div>"))
+            );
+        </script>
+      </div>
+    </div>
+  </body>
 </html>
