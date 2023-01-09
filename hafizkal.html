@@ -16,18 +16,18 @@
     <div class="container">
       <div class="jumbotron text-center">
         <img
-          class=".img-fluid. max-width: 100%;height: auto;"
+          class=".img-fluid"
           style="width: 350px; height: 227.98px"
           src="https://res.cloudinary.com/defhonsuw/image/upload/v1668430497/whafiz/whafizlogo_uxf5xf.png"
         />
         <br /><br />
-        <h1>Whatshafız ‘Hafızkal’ Topluluk Kuralları</h1>
+        <h1>Whatshafız ‘Hafız Kal’ Topluluk Kuralları</h1>
         <div id="listele"></div>
         <script>
           fetch("https://api.whatshafiz.com/api/v1/regulations/hafizkal")
             .then((response) => response.json())
-            .then((veri) =>
-              veri.text((listele.innerHTML += "<div>" + veri.text + "</div>"))
+            .then(
+              (veri) => (listele.innerHTML = "<div>" + veri.text + "</div>")
             );
         </script>
       </div>

@@ -58,6 +58,8 @@
         </nav>
       </div>
     </header>
+
+
     <section id="hero-animated" class="hero-animated d-flex align-items-center">
       <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
         <img src="assets/img/logo.png" class="img-fluid animated">
@@ -66,6 +68,8 @@
         <p>Hafızlık Eğitim Programı</p>
       </div>
     </section>
+
+
     <section id="whafiznedir" class="cta">
       <div class="container" data-aos="zoom-out">
         <div class="row g-5">
@@ -92,10 +96,11 @@
         </div>
       </div>
     </section>
+
     <section id="featured-services" class="featured-services">
       <div class="container" id="yonetmelik">
         <div class="row gy-4" id="yonetmelik">
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="50">
+          <div class="col-xl-6 col-md-8 d-flex" data-aos="zoom-out" data-aos-delay="50">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-bounding-box-circles icon"></i>
@@ -106,7 +111,7 @@
               <p>Sıfırdan Başlayanların "Hafızol" programımızın kurallarını içeren Yönetmeliği Okumak İçin Tıklayınız</p>
             </div>
           </div>
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="100">
+          <div class="col-xl-6 col-md-8 d-flex" data-aos="zoom-out" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon">
                 <i class="bi bi-calendar4-week icon"></i>
@@ -117,15 +122,26 @@
               <p>Hafızlıklarını tekrar etmek isteyenler için "Hafızkal" programı kurallarını içeren Yönetmeliği okumak için tıklayınız.</p>
             </div>
           </div>
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="100">
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="kayit" class="pricing">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Kayıt</h2>
+          <p>Kayıt olmak için Kur'an-ı Kerimi iyi okuyabiliyor olmanız gerekmektedir. </p>
+
+          <div class="col-xl-8 col-md-12 align-items-center" data-aos="zoom-out" data-aos-delay="100">
             <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week icon"></i>
-              </div>
-              <h4>
-                <a href="" target="_blank" class="stretched-link">Kayıt olunabilecek kurslar</a>
+             
+              <div>
+               
                 <!--kurslar başlangıç-->
-                <ul id="listele"></ul>
+                <ul style="align-items:center">
+                  <li id="listele"> </li>
+                </ul>
                 
     <script>
         fetch("https://api.whatshafiz.com/api/v1/courses/available")
@@ -136,28 +152,37 @@
                 
                 if(date.getTime() > Date.now())
                 {
-                    listele.innerHTML+=`<div>${element.type}-son kayıt tarihi -${element.can_be_applied_until}</div>`
+                    listele.innerHTML+=`<p style="justify-content:center">${element.type}-son kayıt tarihi -${element.can_be_applied_until}</p>`
+                    enableBtn();
                     
+                }
+                else{
+                  disableBtn();
+                  
                 }
                 
             });
 
         })
+
+
+        function disableBtn() {
+    document.getElementById("btnHafizOl").disabled = true;
+    document.getElementById("btnHafizKal").disabled = true;
+}
+
+function enableBtn() {
+    document.getElementById("btnHafizOl").disabled = false;
+    document.getElementById("btnHafizKal").disabled = false;
+}
     
     </script>
                 <!--kurslar bitiş-->
-              </h4>
+  </div>
               <p></p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section id="kayit" class="pricing">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Kayıt</h2>
-          <p>Kayıt olmak için Kur'an-ı Kerimi iyi okuyabiliyor olmanız gerekmektedir. </p>
+
         </div>
         <div class="row gy-4">
           <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
@@ -199,7 +224,7 @@
                 </li>
               </ul>
               <div  class="text-center mt-auto">
-                <a id="btnHafizKal" href="https://panel.whatshafiz.com/register?type=hafizkal" class="btn btn-primary buy-btn disabled">Kayıt Ol</a>
+                <a id="btnHafizKal" href="https://panel.whatshafiz.com/register?type=hafizkal" class="btn btn-primary buy-btn">Kayıt Ol</a>
               </div>
             </div>
           </div>
@@ -238,13 +263,15 @@
                 </li>
               </ul>
               <div  class="text-center mt-auto">
-                <a id="btnHafizOl" href="https://panel.whatshafiz.com/register?type=hafizol" class="btn btn-primary buy-btn disabled">Kayıt Ol</a>
+                <button id="btnHafizOl" href="https://panel.whatshafiz.com/register?type=hafizol" class="btn btn-primary buy-btn ">Kayıt Ol</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+
     <section id="sss" class="faq">
       <div class="container-fluid" data-aos="fade-up">
         <div class="row gy-4">
