@@ -4,8 +4,36 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+var baseUrl = 'https://api.whatshafiz.com/api/v1/';
+var hafizkalYonetmelik = null;
+var hafizolYonetmelik = null;
+var availableCourse = null;
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
+
+  $.get(baseUrl + 'courses/available', function(data) {
+    availableCourse = data.find(function(course) { return course.type === 'whatshafiz'; })
+
+    if (availableCourse) {
+      $('.whatshafiz_can_be_applied_until').html(availableCourse.can_be_applied_until);
+      $('.whatshafiz_start_at').html(availableCourse.start_at);
+
+      $.get(baseUrl + 'regulations/hafizol', function( data ) {
+        hafizolYonetmelik = data;
+        $('#hafizol-yonetmeligi-text').html(data.text);
+        $('#hafizol-yonetmeligi-summary').html(data.summary);
+      });
+      $.get(baseUrl + 'regulations/hafizkal', function( data ) {
+        hafizkalYonetmelik = data;
+        $('#hafizkal-yonetmeligi-text').html(data.text);
+        $('#hafizkal-yonetmeligi-summary').html(data.summary);
+      });
+    } else {
+      $('#whatshafiz-register-buttons-holder').hide();
+      $('#whatshafiz-register-off').show();
+    }
+  });
 
   /**
    * Preloader
@@ -173,6 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const glightbox = GLightbox({
     selector: '.glightbox'
+  });
+  var hafizol = GLightbox({
+    selector: '.glightbox2'
+  });
+  var hafizkal = GLightbox({
+    selector: '.glightbox3'
   });
 
   /**
